@@ -1,5 +1,6 @@
-#!/bin/bash
-CVARS="+set fs_basegame baseoa +set protocol 71 +set com_protocol 72 +set cl_voip 1"
+#!/bin/sh
+CVARS="+set fs_basegame baseoa +set protocol 71"
+DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 
 arch="$(uname -m)"
 case "$arch" in
