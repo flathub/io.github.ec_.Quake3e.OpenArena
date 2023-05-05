@@ -8,4 +8,8 @@ case "$arch" in
     aarch64) q3e_arch="aarch64" ;;
 esac
 
+if [ "$1" = "g" ]; then
+exec quake3e.${q3e_arch} "+set fs_basegame $2" "$@"
+else
 exec quake3e.${q3e_arch} $CVARS "$@"
+fi
