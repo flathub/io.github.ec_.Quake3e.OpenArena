@@ -10,6 +10,7 @@ esac
 
 if [ "$CVARS" != "" ]; then
 exec quake3e.${q3e_arch} "$@"
+CVARS=""
 else
 echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
 exec quake3e.${q3e_arch} $OA_CVARS "$@"
