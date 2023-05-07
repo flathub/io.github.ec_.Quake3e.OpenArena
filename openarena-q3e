@@ -8,7 +8,7 @@ case "$arch" in
     aarch64) q3e_arch="aarch64" ;;
 esac
 
-if [ $CVARS != $OA_CVARS ]; then
+if [ "$CVARS" != "$OA_CVARS" ]; then
 exec quake3e.${q3e_arch} "$@"
 else
 echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
