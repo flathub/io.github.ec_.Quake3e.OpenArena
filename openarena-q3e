@@ -9,9 +9,11 @@ case "$arch" in
 esac
 
 if [ "$CVARS" != "" ]; then
-exec quake3e.${q3e_arch} "$CVARS" "$@"
+exec omega.${q3e_arch} "$CVARS" "$@"
 CVARS=""
 else
-echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
-exec quake3e.${q3e_arch} $OA_CVARS "$@"
+CVARS="$OA_CVARS"
+echo "Current game CVARS are:" "$CVARS"
+echo "Change CVARS variable before starting in order to change basegame or settings which are contradictory/incompatible to/with those set up initially. In order to add CVARS to OA, just add them as arguments."
+exec omega.${q3e_arch} $OA_CVARS "$@"
 fi
