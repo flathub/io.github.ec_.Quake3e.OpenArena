@@ -4,7 +4,7 @@ DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 
 arch="$(uname -m)"
 case "$arch" in
-    x86_64) q3e_arch="x64" ;;
+    x86_64) q3e_arch="x86_64" ;;
     aarch64) q3e_arch="aarch64" ;;
 esac
 
