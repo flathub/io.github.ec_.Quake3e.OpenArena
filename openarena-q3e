@@ -9,7 +9,7 @@ case "$arch" in
 esac
 
 if [ "$CVARS" != "" ]; then
-exec quake3e.${q3e_arch} "$CVARS" "$@"
+exec quake3e.${q3e_arch} "$@"
 CVARS=""
 else
 CVARS="$OA_CVARS"
