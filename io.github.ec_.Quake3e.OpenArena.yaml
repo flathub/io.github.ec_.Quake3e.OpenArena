@@ -30,8 +30,8 @@ modules:
     sources:
       # Pull directly from the upstream source
       - type: git
-        url: "https://github.com/rorgoroth/Quake3e-OpenArena.git"
-        commit: "40609715bef4e74ef8f51fa08321b7b6e25ee9ef"
+        url: "https://github.com/ec-/Quake3e.git"
+        commit: "8ced5d6483e6a94e9c5d596a57d5a5516a4bbb30"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
