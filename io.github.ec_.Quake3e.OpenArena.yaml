@@ -30,8 +30,8 @@ modules:
     sources:
       # Pull directly from the upstream source
       - type: git
-        url: "https://github.com/EddieBrrrock/OmegA-engine.git"
-        commit: "2f9f9de2205c778aa89feaa551eafa7da3c448d1"
+        url: "https://github.com/rorgoroth/Quake3e-OpenArena.git"
+        commit: "40609715bef4e74ef8f51fa08321b7b6e25ee9ef"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
