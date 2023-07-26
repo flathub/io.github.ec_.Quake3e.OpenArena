@@ -30,15 +30,15 @@ modules:
     sources:
       # Pull directly from the upstream source
       - type: git
-        url: "https://github.com/ec-/Quake3e.git"
-        commit: "8ced5d6483e6a94e9c5d596a57d5a5516a4bbb30"
+        url: "https://github.com/ec-/Quake3e"
+        commit: "57404cae921dfb2cf45a58f535f71ee7895ecc79"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
     build-commands:
-      - make RENDERER_DEFAULT=vulkan USE_VOIP=1 USE_CODEC_OPUS=1 USE_OPENAL=1 USE_MUMBLE=1 COPYBINDIR=/app/bin DEFAULT_BASEDIR=/app/share/openarena COPYDIR=/app/share/openarena
+      - make USE_CODEC_VORBIS=1 USE_INTERNAL_OGG=1 USE_VOIP=1 USE_CODEC_OPUS=1 USE_OPENAL=1 USE_MUMBLE=1 USE_FREETYPE=1 USE_INTERNAL_LIBS=1 BUILD_SERVER=0COPYDIR=/app/share/openarena COPYBINDIR=/app/bin DEFAULT_BASEDIR=/app/share/openarena USE_CURL=1 USE_CURL_DLOPEN=0 #CFLAGS="-O3"
       - make install "DESTDIR=${FLATPAK_DEST}/bin"
-      # Use ${FLATPAK_DEST}/bin because Quake3e does not follow platform conventions.
+      #          Use ${FLATPAK_DEST}/bin because Quake3e does not follow platform conventions.
   - name: openarena-data
     buildsystem: simple
     sources:
@@ -46,8 +46,7 @@ modules:
         url: "https://downloads.sourceforge.net/project/oarena/openarena-0.8.8.zip"
         sha256: "5a8faf7f5b51f351b0a1618c06b6b98a5f1a6758f1d39818de2c87df2a0bac4a"
     build-commands:
-      - mkdir -p /app/share/openarena
-      - mv baseoa missionpack /app/share/openarena
+      - mv baseoa missionpack /app/bin/
   - name: launch-script
     buildsystem: simple
     sources:

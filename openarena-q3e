@@ -4,7 +4,7 @@ DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 
 arch="$(uname -m)"
 case "$arch" in
-    x86_64) q3e_arch="64" ;;
+    x86_64) q3e_arch="x64" ;;
     aarch64) q3e_arch="aarch64" ;;
 esac
 
@@ -12,8 +12,6 @@ if [ "$CVARS" != "" ]; then
 exec quake3e.${q3e_arch} "$CVARS" "$@"
 CVARS=""
 else
-CVARS="$OA_CVARS"
-echo "Current game CVARS are:" "$CVARS"
-echo "Change CVARS variable before starting in order to change basegame or settings which are contradictory/incompatible to/with those set up initially. In order to add CVARS to OA, just add them as arguments."
+echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
 exec quake3e.${q3e_arch} $OA_CVARS "$@"
 fi
