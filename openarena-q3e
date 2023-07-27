@@ -8,10 +8,22 @@ case "$arch" in
     aarch64) q3e_arch="aarch64" ;;
 esac
 
-if [ "$CVARS" != "" ]; then
-exec quake3e.${q3e_arch} "$CVARS" "$@"
-CVARS=""
+if [ "$Q3ENGINE" != "" ]; then
+    if [ "$CVARS" != "" ]; then
+    exec ${Q3ENGINE} "$CVARS" "$@"
+    CVARS=""
+    Q3ENGINE=""
+    else
+    echo "Change CVARS variable before starting in order to change basegame or other game variables. In order to add CVARS to OA, just add them as arguments."
+    exec ${Q3ENGINE} "$OA_CVARS" "$@"
+    Q3ENGINE=""
+    fi
 else
-echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
-exec quake3e.${q3e_arch} $OA_CVARS "$@"
+    if [ "$CVARS" != "" ]; then
+        exec quake3e.${q3e_arch} "$CVARS" "$@"
+        CVARS=""
+        else
+        echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
+        exec quake3e.${q3e_arch} "$OA_CVARS" "$@"
+    fi
 fi
