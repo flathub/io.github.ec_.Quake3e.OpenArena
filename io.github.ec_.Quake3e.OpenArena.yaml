@@ -31,7 +31,7 @@ modules:
       # Pull directly from the upstream source
       - type: git
         url: "https://github.com/ec-/Quake3e"
-        commit: "6614cdd8881e2668c13187f0adf921f0950c292b"
+        commit: "e445088d5342373537cdc9377a6be09916a57e67"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
