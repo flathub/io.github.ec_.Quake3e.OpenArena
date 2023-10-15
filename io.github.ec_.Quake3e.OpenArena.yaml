@@ -1,6 +1,6 @@
 app-id: io.github.ec_.Quake3e.OpenArena
 runtime: org.freedesktop.Platform
-runtime-version: "23.08"
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
 command: openarena-q3e
 finish-args:
@@ -14,7 +14,7 @@ finish-args:
   # Needs a persistent location for Quake 3 data files, the user
   # has permission to add things to and this is the only one in Quake3e's
   # search path.
-  - --persist=.q3a
+  - --persist=.var/app/io.github.ec_.Quake3e.OpenArena/data
   #          users can copy/move their stuff to ~/.var/app/io.github.ec_.Quake3e.OpenArena/data
   #          manually if they want to.
 cleanup:
