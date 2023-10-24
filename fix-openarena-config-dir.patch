@@ -1,0 +1,13 @@
+diff --git a/code/unix/unix_shared.c b/code/unix/unix_shared.c
+index 8a988ba0..8b491239 100644
+--- a/code/unix/unix_shared.c
++++ b/code/unix/unix_shared.c
+@@ -414,7 +414,7 @@ const char *Sys_DefaultHomePath( void )
+ #ifdef MACOS_X
+ 		Q_strcat( homePath, sizeof(homePath), "/Library/Application Support/Quake3" );
+ #else
+-		Q_strcat( homePath, sizeof( homePath ), "/.q3a" );
++		Q_strcat( homePath, sizeof( homePath ), "/.openarena" );
+ #endif
+ 		if ( mkdir( homePath, 0750 ) ) 
+ 		{
