@@ -25,7 +25,7 @@ else
     mkdir -p "$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/homepath"
 fi
 ###
-    
+
 OA_CVARS="+set fs_basegame baseoa +set protocol 71 +set fs_homepath $OA_DIR"
 DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 arch="$(uname -m)"
@@ -34,7 +34,7 @@ case "$arch" in
     aarch64) q3e_arch="aarch64" ;;
 esac
 
-if ["$RESPECT_CONVENTIONS" -eq 0]; then
+if [ "$RESPECT_CONVENTIONS" -eq 0 ]; then
     echo -e "If you'd rather change your homepath from ~/.openarena to ~/.var/app/io.github.ec_.Quake3e.OpenArena/homepath you can set the variable RESPECT_CONVENTIONS to 1 in the following config file: ~/.var/app/io.github.ec_.Quake3e.OpenArena/config/cfg \n"
 fi
 
