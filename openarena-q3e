@@ -44,7 +44,7 @@ if [ "$Q3ENGINE" != "" ]; then
         CVARS=""
         Q3ENGINE=""
     else
-        echo "Change CVARS variable before starting in order to change basegame or other game variables. In order to add CVARS to ${Q3ENGINE}, just add them as arguments."
+        echo "Change CVARS variable before starting in order to change basegame or other game variables. In order to add CVARS to ${Q3ENGINE}, just add them as arguments. \n"
         exec ${Q3ENGINE} "$OA_CVARS" "$@"
         Q3ENGINE=""
     fi
