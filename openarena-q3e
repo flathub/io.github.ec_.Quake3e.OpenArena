@@ -15,14 +15,16 @@ if [ ! -f "$CONFIG_FILE" ] || [ -z "$RESPECT_XDGDIRS" ]; then
 fi
 # Use the value of RESPECT_XDGDIRS to determine the directory
 if [ "$RESPECT_XDGDIRS" -eq 1 ]; then
-    # Use ~/.var/app/io.github.ec_.Quake3e.OpenArena/.openarena/ directory
-    mkdir -p "$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/homepath"
-    OA_DIR="$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/homepath"
-    rm -rf "$HOME/.openarena"
+    # Use ${XDG_DATA_HOME}/homepath directory
+    mkdir -p "${XDG_DATA_HOME}/homepath"
+    OA_DIR="${XDG_DATA_HOME}/homepath"
+    if [ -d "$HOME/.openarena" ]; then
+        mv "$HOME/.openarena"/* "$OA_DIR"
+        rm -rf "$HOME/.openarena"
+    fi
 else
     # Use .openarena directory
     OA_DIR="$HOME/.openarena"
-    mkdir -p "$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/homepath"
 fi
 ###
 
