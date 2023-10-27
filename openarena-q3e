@@ -1,29 +1,54 @@
 #!/bin/sh
-OA_CVARS="+set fs_basegame baseoa +set protocol 71"
-DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 
+# Set the necessary variables
+OA_DIR="${XDG_DATA_HOME}"
+OA_CVARS="+set fs_basegame baseoa +set protocol 71 +set fs_homepath ${OA_DIR}"
+DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
+CONFIG_FILE=".var/app/io.github.ec_.Quake3e.OpenArena/config/cfg"
+CFG_COMMENT="You can add CVARS using the following variable: CFG_CVARS. Use \ for readability."
+
+# Determine the architecture of the system
 arch="$(uname -m)"
 case "$arch" in
-    x86_64) q3e_arch="x64" ;;
-    aarch64) q3e_arch="aarch64" ;;
+    x86_64)
+        q3e_arch="x64"
+        ;;
+    aarch64)
+        q3e_arch="aarch64"
+        ;;
 esac
 
-if [ "$Q3ENGINE" != "" ]; then
-    if [ "$CVARS" != "" ]; then
-    exec ${Q3ENGINE} "$CVARS" "$@"
-    CVARS=""
-    Q3ENGINE=""
+# Check if the configuration file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    # Create the configuration file with the comment
+    echo "$CFG_COMMENT" > "$CONFIG_FILE"
+    echo "OA_DIR=$OA_DIR" >> "$CONFIG_FILE"
+    echo "OA_CVARS=$OA_CVARS" >> "$CONFIG_FILE"
+    echo "DISABLED_CVARS=$DISABLED_CVARS" >> "$CONFIG_FILE"
+    echo "It seems this is your first run... There's a config file you can check out $CONFIG_FILE"
+fi
+# Source the configuration file
+source "$CONFIG_FILE"
+
+# Check if the Q3ENGINE variable is set
+if [ -n "$Q3ENGINE" ]; then
+    # Check if the CVARS variable is set
+    if [ -n "$CVARS" ]; then
+        # Execute the Q3ENGINE with the provided CVARS and arguments
+        exec "$Q3ENGINE" "$CVARS" "$@"
     else
-    echo "Change CVARS variable before starting in order to change basegame or other game variables. In order to add CVARS to OA, just add them as arguments."
-    exec ${Q3ENGINE} "$OA_CVARS" "$@"
-    Q3ENGINE=""
+        echo "Change the CVARS variable before starting in order to change the basegame or other game variables. To add CVARS to OA, simply add them as arguments."
+        # Execute the Q3ENGINE with the default OA_CVARS and arguments
+        exec "$Q3ENGINE" "$OA_CVARS" "$@"
     fi
 else
-    if [ "$CVARS" != "" ]; then
+    # Check if the CVARS variable is set
+    if [ -n "$CVARS" ]; then
+        # Execute the quake3e binary with the provided CVARS and arguments
         exec /app/share/openarena/quake3e.${q3e_arch} "$CVARS" "$@"
-        CVARS=""
-        else
-        echo "Change CVARS variable before starting in order to change basegame. In order to add CVARS to OA, just add them as arguments."
+    else
+        echo "Change the CVARS variable before starting in order to change the basegame. To add CVARS to OA, simply add them as arguments."
+        # Execute the quake3e binary with the default OA_CVARS and arguments
         exec /app/share/openarena/quake3e.${q3e_arch} "$OA_CVARS" "$@"
     fi
 fi
