@@ -12,6 +12,7 @@ if [ ! -f "$CONFIG_FILE" ] || [ -z "$RESPECT_XDGDIRS" ]; then
 
     # Save RESPECT_XDGDIRS in the config file
     echo "RESPECT_XDGDIRS=$RESPECT_XDGDIRS" > "$CONFIG_FILE"
+    echo "It seems this is the first time you run OpenArena... You can edit the $$CONFIG_FILE and change RESPECT_XDGDIRS to use your XDG_DATA_FOLDER, which is: ${XDG_DATA_HOME}/homepath Instead of polluting your HOMEDIR by adding the hidden .openarena folder."
 fi
 # Use the value of RESPECT_XDGDIRS to determine the directory
 if [ -n "$RESPECT_XDGDIRS" ] && [ "$RESPECT_XDGDIRS" -eq 1 ]; then
