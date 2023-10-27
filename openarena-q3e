@@ -22,9 +22,9 @@ esac
 if [ ! -f "$CONFIG_FILE" ]; then
     # Create the configuration file with the comment
     echo "$CFG_COMMENT" > "$CONFIG_FILE"
-    echo "export OA_DIR=$OA_DIR" >> "$CONFIG_FILE"
-    echo "export OA_CVARS=$OA_CVARS" >> "$CONFIG_FILE"
-    echo "export DISABLED_CVARS=$DISABLED_CVARS" >> "$CONFIG_FILE"
+    echo "export OA_DIR="$OA_DIR"" >> "$CONFIG_FILE"
+    echo "export OA_CVARS="$OA_CVARS"" >> "$CONFIG_FILE"
+    echo "export DISABLED_CVARS="$DISABLED_CVARS"" >> "$CONFIG_FILE"
     echo "It seems this is your first run... There's a config file you can check out $CONFIG_FILE"
 fi
 # Source the configuration file
