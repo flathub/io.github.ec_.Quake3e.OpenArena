@@ -39,7 +39,7 @@ modules:
       - type: archive
         url: "https://downloads.sourceforge.net/project/oarena/openarena-0.8.8.zip"
         sha256: "5a8faf7f5b51f351b0a1618c06b6b98a5f1a6758f1d39818de2c87df2a0bac4a"
-        type: archive
+      - type: archive
         url: "https://github.com/Bishop-333/OmegA-mod/releases/download/v3.2.4/z_omega-v3.2.4.pk3"
         sha256: "ea7c6db5c125bbb43866db2dd11926c05c5c27349f851a989f048ce61ee53532"
     build-commands:
