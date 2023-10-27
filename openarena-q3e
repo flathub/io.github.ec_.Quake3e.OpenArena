@@ -14,7 +14,7 @@ if [ ! -f "$CONFIG_FILE" ] || [ -z "$RESPECT_XDGDIRS" ]; then
     echo "RESPECT_XDGDIRS=$RESPECT_XDGDIRS" > "$CONFIG_FILE"
 fi
 # Use the value of RESPECT_XDGDIRS to determine the directory
-if [ "$RESPECT_XDGDIRS" -eq 1 ]; then
+if [ -n "$RESPECT_XDGDIRS" ] && [ "$RESPECT_XDGDIRS" -eq 1 ]; then
     # Use ${XDG_DATA_HOME}/homepath directory
     mkdir -p "${XDG_DATA_HOME}/homepath"
     OA_DIR="${XDG_DATA_HOME}/homepath"
@@ -36,7 +36,7 @@ case "$arch" in
     aarch64) q3e_arch="aarch64" ;;
 esac
 
-if [ "$RESPECT_CONVENTIONS" -eq 0 ]; then
+if [ "$RESPECT_CONVENTIONS" != "" ] && [ "$RESPECT_CONVENTIONS" -eq 0 ]; then
     echo -e "If you'd rather change your homepath from ~/.openarena to ~/.var/app/io.github.ec_.Quake3e.OpenArena/homepath you can set the variable RESPECT_CONVENTIONS to 1 in the following config file: ~/.var/app/io.github.ec_.Quake3e.OpenArena/config/cfg \n"
 fi
 
