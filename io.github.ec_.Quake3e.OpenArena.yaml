@@ -29,8 +29,6 @@ modules:
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
-      - type: patch
-        path: fix-openarena-config-dir.patch
     build-commands:
       - make USE_CODEC_VORBIS=1 USE_INTERNAL_OGG=1 USE_VOIP=1 USE_CODEC_OPUS=1 USE_OPENAL=1 USE_MUMBLE=1 USE_FREETYPE=1 USE_INTERNAL_LIBS=1 BUILD_SERVER=0 \
         COPYDIR=/app/share/openarena COPYBINDIR=/app/share/openarena DEFAULT_BASEDIR=/app/share/openarena
