@@ -26,7 +26,7 @@
     </p>
     <p>
       This version of OpenArena is based on the Quake3e engine by "Ec" on GitHub,
-      we do not take credit for their work or any of the work done by the OpenArena team.
+      we do not take credit for his work or any of the work done by the OpenArena team.
       This Flatpak was made to be a replacement of the original one released in 2012,
       as it contains bugs and annoyances not present in this engine.
       The gameplay is 100% compatible and if not, please make
@@ -38,10 +38,10 @@
     <screenshot type="default">http://www.openarena.ws/e107_images/custom/085-1.jpg</screenshot>
     <screenshot>http://www.openarena.ws/e107_images/custom/085-6.jpg</screenshot>
     <screenshot>http://www.openarena.ws/e107_images/custom/085-16.jpg</screenshot>
+    <screenshot>http://openarena.ws/e107_images/custom/085-13.jpg</screenshot>
+    <screenshot>http://openarena.ws/e107_images/custom/085-16.jpg</screenshot>
+    <screenshot>http://openarena.ws/e107_images/custom/085-3.jpg</screenshot>
   </screenshots>
-  <!-- FIXME: change this to an upstream email address for spec updates
-  <updatecontact>someone_who_cares@upstream_project.org</updatecontact>
-   -->
   <content_rating type="oars-1.1">
     <content_attribute id="violence-fantasy">moderate</content_attribute>
     <content_attribute id="violence-realistic">none</content_attribute>
@@ -50,6 +50,6 @@
     <content_attribute id="social-chat">intense</content_attribute>
   </content_rating>
   <releases>
-    <release version="0.8.8" date="2023-01-09"/>
+    <release version="0.8.8" date="2023-10-27"/>
   </releases>
 </application>
