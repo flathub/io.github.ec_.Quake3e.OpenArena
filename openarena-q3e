@@ -6,6 +6,8 @@ OA_CVARS="+set fs_basegame baseoa +set protocol 71 +set fs_homepath ${OA_DIR}"
 DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 CONFIG_FILE=".var/app/io.github.ec_.Quake3e.OpenArena/config/cfg"
 CFG_COMMENT="You can add CVARS using the following variable: CFG_CVARS. Use \ for readability."
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
 # Determine the architecture of the system
 arch="$(uname -m)"
@@ -25,7 +27,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo "export OA_DIR="$OA_DIR"" >> "$CONFIG_FILE"
     echo "export OA_CVARS="$OA_CVARS"" >> "$CONFIG_FILE"
     echo "export DISABLED_CVARS="$DISABLED_CVARS"" >> "$CONFIG_FILE"
-    echo "It seems this is your first run... There's a config file you can check out $CONFIG_FILE"
+    echo -e "${RED}It seems this is your first run... There's a config file you can check out $CONFIG_FILE ${NC}"
 fi
 # Source the configuration file
 source "$CONFIG_FILE"
@@ -37,7 +39,7 @@ if [ -n "$Q3ENGINE" ]; then
         # Execute the Q3ENGINE with the provided CVARS and arguments
         exec "$Q3ENGINE" "$CVARS" "$@"
     else
-        echo "Change the CVARS variable before starting in order to change the basegame or other game variables. To add CVARS to OA, simply add them as arguments."
+        echo -e "${RED}Change the CVARS variable before starting in order to change the basegame or other game variables. To add CVARS to OA, simply add them as arguments.${NC}"
         # Execute the Q3ENGINE with the default OA_CVARS and arguments
         exec "$Q3ENGINE" "$OA_CVARS" "$@"
     fi
@@ -49,6 +51,6 @@ else
     else
         # Execute the quake3e binary with the default OA_CVARS and arguments
         exec /app/share/openarena/quake3e.${q3e_arch} "$OA_CVARS" "$@"
-        echo "Change the CVARS variable before starting in order to change the basegame. To add CVARS to OA, simply add them as arguments. You can also use the config file to do so( $CONFIG_FILE )"
+        echo -e "${RED}Change the CVARS variable before starting in order to change the basegame. To add CVARS to OA, simply add them as arguments. You can also use the config file to do so( $CONFIG_FILE )${NC}"
     fi
 fi
