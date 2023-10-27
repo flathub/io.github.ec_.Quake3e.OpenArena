@@ -47,8 +47,8 @@ else
         # Execute the quake3e binary with the provided CVARS and arguments
         exec /app/share/openarena/quake3e.${q3e_arch} "$CVARS" "$@"
     else
-        echo "Change the CVARS variable before starting in order to change the basegame. To add CVARS to OA, simply add them as arguments."
         # Execute the quake3e binary with the default OA_CVARS and arguments
         exec /app/share/openarena/quake3e.${q3e_arch} "$OA_CVARS" "$@"
+        echo "Change the CVARS variable before starting in order to change the basegame. To add CVARS to OA, simply add them as arguments. You can also use the config file to do so( $CONFIG_FILE )"
     fi
 fi
