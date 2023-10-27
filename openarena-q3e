@@ -23,7 +23,7 @@ if [ -n "$RESPECT_XDGDIRS" ] && [ "$RESPECT_XDGDIRS" -eq 1 ]; then
         mv "$HOME/.openarena"/* "$OA_DIR"
         rm -rf "$HOME/.openarena"
     fi
-    if [ -d "$HOME/.openarena" ]; then
+    if [ -d "$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/.openarena" ]; then
         rm -rf "$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/.openarena"
     fi
 else
