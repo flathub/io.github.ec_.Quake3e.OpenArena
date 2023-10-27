@@ -12,7 +12,7 @@ if [ ! -f "$CONFIG_FILE" ] || [ -z "$RESPECT_XDGDIRS" ]; then
 
     # Save RESPECT_XDGDIRS in the config file
     echo "RESPECT_XDGDIRS=$RESPECT_XDGDIRS" > "$CONFIG_FILE"
-    echo "It seems this is the first time you run OpenArena... You can edit the $$CONFIG_FILE and change RESPECT_XDGDIRS to use your XDG_DATA_FOLDER, which is: ${XDG_DATA_HOME}/homepath Instead of polluting your HOMEDIR by adding the hidden .openarena folder."
+    echo -e "It seems this is the first time you run OpenArena... You can edit the $$CONFIG_FILE and change RESPECT_XDGDIRS to use your XDG_DATA_FOLDER, which is: ${XDG_DATA_HOME}/homepath Instead of polluting your HOMEDIR by adding the hidden .openarena folder. \n"
 fi
 # Use the value of RESPECT_XDGDIRS to determine the directory
 if [ -n "$RESPECT_XDGDIRS" ] && [ "$RESPECT_XDGDIRS" -eq 1 ]; then
@@ -23,9 +23,13 @@ if [ -n "$RESPECT_XDGDIRS" ] && [ "$RESPECT_XDGDIRS" -eq 1 ]; then
         mv "$HOME/.openarena"/* "$OA_DIR"
         rm -rf "$HOME/.openarena"
     fi
+    if [ -d "$HOME/.openarena" ]; then
+        rm -rf "$HOME/.var/app/io.github.ec_.Quake3e.OpenArena/.openarena"
+    fi
 else
     # Use .openarena directory
     OA_DIR="$HOME/.openarena"
+    rm -rf "${XDG_DATA_HOME}/homepath"
 fi
 ###
 
