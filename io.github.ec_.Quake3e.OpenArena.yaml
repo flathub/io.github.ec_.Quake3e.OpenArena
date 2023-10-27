@@ -11,12 +11,6 @@ finish-args:
   - --socket=pulseaudio
   - --share=network
   - --socket=fallback-x11
-  # Needs a persistent location for Quake 3 data files, the user
-  # has permission to add things to and this is the only one in Quake3e's
-  # search path.
-  - --persist=.openarena
-  #          users can copy/move their stuff to ~/.var/app/io.github.ec_.Quake3e.OpenArena/.openarena
-  #          manually if they want to.
 cleanup:
   - "/include"
   - "/lib/pkgconfig"
