@@ -41,16 +41,11 @@ modules:
       - type: archive
         url: "https://downloads.sourceforge.net/project/oarena/openarena-0.8.8.zip"
         sha256: "5a8faf7f5b51f351b0a1618c06b6b98a5f1a6758f1d39818de2c87df2a0bac4a"
-    build-commands:
-      - mv baseoa missionpack /app/share/openarena/
-  - name: additional-data
-    buildsystem: simple
-    sources:
       - type: archive
         url: "https://files.poulsander.com/~poul19/public_files/oa/dev088/gamecode_nightly/openarena_gamecode_2023-05-30_905b539.zip"
         sha256: "5b92265b513a48df39bab7cb46479d8bf3582789400cbe3bd5c66ba0f8ef8b79"
     build-commands:
-      - mv oax /app/share/openarena/
+      - mv baseoa oax missionpack /app/share/openarena/
   - name: launch-script
     buildsystem: simple
     sources:
