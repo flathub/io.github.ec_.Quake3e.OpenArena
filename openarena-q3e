@@ -29,7 +29,8 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo "export DISABLED_CVARS=\"$DISABLED_CVARS\"" >> "$CONFIG_FILE"
     echo -e "${RED}It seems this is your first run... There's a config file you can check out $CONFIG_FILE ${NC}"
 fi
-# Source the configuration file
+# Source the configuration file and dispose of current variables
+unset OA_DIR OA_CVARS DISABLED_CVARS
 source "$CONFIG_FILE"
 
 # Check if the Q3ENGINE variable is set
