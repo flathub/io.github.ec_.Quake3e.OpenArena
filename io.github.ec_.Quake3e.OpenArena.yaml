@@ -25,7 +25,7 @@ modules:
       # Pull directly from the upstream source
       - type: git
         url: "https://github.com/Bishop-333/OmegA-engine"
-        commit: "6a5087ed5fdee6c8552c29c409145b8925713dda"
+        commit: "09b9fab660a5ecbda7a688c3269386cd03bc6963"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
