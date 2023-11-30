@@ -1,15 +1,12 @@
 #!/bin/sh
 
-# Set the necessary variables
-if [ -z "$OA_DIR" ]; then
+# Check if either OA_DIR or OA_CVARS are unset
+if [ -z "$OA_DIR" ] || [ -z "$OA_CVARS" ]; then
+    # Set OA_DIR and OA_CVARS with default values if either is unset
     OA_DIR="${XDG_DATA_HOME}"
-fi
-
-if [ -z "$OA_CVARS" ]; then
     OA_CVARS="+set fs_basegame baseoa +set fs_game oax +set protocol 71 +set fs_homepath ${OA_DIR}"
-fi
 
-if [ -z "$CONFIG_FILE" ]; then
+    # Set CONFIG_FILE since either OA_DIR or OA_CVARS is unset
     CONFIG_FILE="${XDG_CONFIG_HOME}/cfg"
 fi
 
