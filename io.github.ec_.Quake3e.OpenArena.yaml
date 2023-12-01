@@ -1,6 +1,6 @@
 app-id: io.github.ec_.Quake3e.OpenArena
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
 command: openarena-q3e
 finish-args:
@@ -24,8 +24,8 @@ modules:
     sources:
       # Pull directly from the upstream source
       - type: git
-        url: "https://github.com/ec-/Quake3e"
-        commit: "914fc4007d8145a14c8473a6503e9e5f0e9e3d1c"
+        url: "https://github.com/Bishop-333/OmegA-engine"
+        commit: "708b8b1d23c189a26e6581092527c3854b86dcd3"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
@@ -39,12 +39,12 @@ modules:
       - type: archive
         url: "https://downloads.sourceforge.net/project/oarena/openarena-0.8.8.zip"
         sha256: "5a8faf7f5b51f351b0a1618c06b6b98a5f1a6758f1d39818de2c87df2a0bac4a"
-      - type: archive
-        url: "https://files.poulsander.com/~poul19/public_files/oa/dev088/gamecode_nightly/openarena_gamecode_2023-05-30_905b539.zip"
-        sha256: "5b92265b513a48df39bab7cb46479d8bf3582789400cbe3bd5c66ba0f8ef8b79"
+      - type: file
+        url: "https://github.com/Bishop-333/OmegA-mod/releases/download/v3.2.4/z_omega-v3.2.4.pk3"
+        sha256: "ea7c6db5c125bbb43866db2dd11926c05c5c27349f851a989f048ce61ee53532"
     build-commands:
       - mv baseoa missionpack /app/share/openarena/
-      - mkdir -p /app/share/openarena/oax && mv oax.pk3 /app/share/openarena/oax/
+      - mv z_omega-v3.2.4.pk3 /app/share/openarena/baseoa/
   - name: launch-script
     buildsystem: simple
     sources:
