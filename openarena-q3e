@@ -4,7 +4,9 @@
 OA_DIR="${XDG_DATA_HOME}"
 OA_CVARS="+set fs_basegame baseoa +set fs_game oax +set protocol 71 +set fs_homepath ${OA_DIR}"
 DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
-CONFIG_FILE="${XDG_CONFIG_HOME}/cfg"
+if [ -z "$CONFIG_FILE" ]; then
+    CONFIG_FILE="${XDG_CONFIG_HOME}/cfg"
+fi
 CFG_COMMENT="#----# You can change engine options by modifying these variables, or adding the variable 'CVARS', also, you can change the game engine using the variable Q3ENGINE."
 RED='[1;31m' # Sets color to red
 NC='[0m' # No Color
@@ -30,9 +32,11 @@ if [ ! -f "$CONFIG_FILE" ]; then
     printf "${RED}It seems this is your first run... There's a config file you can check out $CONFIG_FILE ${NC}\n"
 fi
 
-# Source the configuration file and dispose of current variables
-unset OA_DIR OA_CVARS DISABLED_CVARS
-. "$CONFIG_FILE"
+# Source the configuration file and dispose of current variables.
+if [ -z "$CVARS" ]; then
+    unset OA_DIR OA_CVARS DISABLED_CVARS
+    source "$CONFIG_FILE" 1>&2>/dev/null && printf "${RED}Config file loaded${NC}\n"
+fi
 
 # Check if the Q3ENGINE variable is set
 if [ -n "$Q3ENGINE" ]; then
