@@ -40,7 +40,7 @@ modules:
         url: "https://downloads.sourceforge.net/project/oarena/openarena-0.8.8.zip"
         sha256: "5a8faf7f5b51f351b0a1618c06b6b98a5f1a6758f1d39818de2c87df2a0bac4a"
       - type: archive
-        url: "https://github.com/flathub/io.github.ec_.Quake3e.OpenArena/raw/Omega-Update2/omega_mod_3.2.6.zip"
+        url: "https://github.com/flathub/io.github.ec_.Quake3e.OpenArena/blob/OmegA-engine/omega_mod_3.2.6.zip?raw=true"
         sha256: "626e046dcfad09c886b042f99e06817c54afde4c34b1f32e1c61eb76c77e41dc"
     build-commands:
       - mv baseoa missionpack /app/share/openarena/
