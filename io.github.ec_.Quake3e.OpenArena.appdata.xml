@@ -4,11 +4,13 @@
   <id type="desktop">io.github.ec_.Quake3e.OpenArena</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
+  <developer_name>xplshn</developer_name>
   <provides>
     <id>io.github.ec_.Quake3e.OpenArena.desktop</id>
   </provides>
   <name>OpenArena (Quake3e)</name>
   <summary>Free and open source first-person shooter</summary>
+  <launchable type="desktop-id">io.github.ec_.Quake3e.OpenArena.desktop</launchable>
   <description>
     <p>
       OpenArena is a free and open source first-person shooter game based
