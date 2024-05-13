@@ -38,7 +38,7 @@
       A configuration file is also available, which lets you modify CVARS however you want.
       The OAX patch has been applied, which adds support for more screen resolutions and makes the game playable
       in many modern systems, it also includes bugfixes and improvements. (to disable this patch modify the config file).
-      Beware that trying to connect to an OAX-patched server may not with unpatched clients. Connections to unpatched servers
+      Beware that trying to connect to an OAX-patched server may not work with unpatched clients. Connections to unpatched servers
       do work and present no issues.
     </p>
   </description>
