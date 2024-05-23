@@ -25,7 +25,7 @@ modules:
       # Pull directly from the upstream source
       - type: git
         url: "https://github.com/ec-/Quake3e"
-        commit: "e7884dbe667667b9445e2f25f991c99b886cdc98"
+        commit: "2baff419256d5f12572a9227cd52dc343ee6369d"
        # x-checker-data: # Allow the bot to automatically make PRs for new releases
          # type: git
          # tag-pattern: "^(\\d{4}-\\d{2}-\\d{2})$"
@@ -40,8 +40,8 @@ modules:
         url: "https://downloads.sourceforge.net/project/oarena/openarena-0.8.8.zip"
         sha256: "5a8faf7f5b51f351b0a1618c06b6b98a5f1a6758f1d39818de2c87df2a0bac4a"
       - type: archive
-        url: "https://files.poulsander.com/~poul19/public_files/oa/dev088/gamecode_nightly/openarena_gamecode_2024-04-09_2419368.zip"
-        sha256: "a4f3a48661ce4f2b4547e5ccff1c3618d6ca8678c793400fd1932943254e328d"
+        url: "https://files.poulsander.com/~poul19/public_files/oa/dev088/gamecode_nightly/openarena_gamecode_2024-05-14_d371ff1.zip"
+        sha256: "729b9efb489b400ece6483d21e3edf8f8e822e66a6c1556eb15be13e1a1416f3"
     build-commands:
       - mv baseoa missionpack /app/share/openarena/
       - mkdir -p /app/share/openarena/oax && mv oax.pk3 /app/share/openarena/oax/
