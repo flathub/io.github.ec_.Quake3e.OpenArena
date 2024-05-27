@@ -4,7 +4,7 @@
   <id>io.github.ec_.Quake3e.OpenArena</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <developer_name>OA Team and xplshn</developer_name>
+  <developer_name>OA Team, xplshn and contributors</developer_name>
   <provides>
     <id>openarena.desktop</id>
   </provides>
@@ -27,12 +27,10 @@
       Domination.
     </p>
     <p>
-      This version of OpenArena is based on the Quake3e engine by "Ec" on GitHub,
-      we do not take credit for their work or any of the work done by the OpenArena team.
+      This version of OpenArena is based on the Quake3e engine,
+      we do not take credit for the work done by the OpenArena team nor "Eugene", who develops the Quake3e engine.
       This Flatpak was made to be a replacement of the original one released in 2012,
       as it contains bugs and annoyances not present in this engine.
-      The gameplay is 100% compatible and if not, please make
-      an issue in our repo, we'll investigate it.
     </p>
     <p>
       A configuration file is also available, which lets you modify CVARS however you want.
