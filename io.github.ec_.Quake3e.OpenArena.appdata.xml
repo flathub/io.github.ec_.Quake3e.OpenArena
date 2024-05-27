@@ -4,11 +4,11 @@
   <id>io.github.ec_.Quake3e.OpenArena</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <developer_name>xplshn</developer_name>
+  <developer_name>OA Team and xplshn</developer_name>
   <provides>
-    <id>io.github.ec_.Quake3e.OpenArena.desktop</id>
+    <id>openarena.desktop</id>
   </provides>
-  <name>OpenArena (Quake3e)</name>
+  <name>OpenArena</name>
   <summary>Free and open source first-person shooter</summary>
   <launchable type="desktop-id">io.github.ec_.Quake3e.OpenArena.desktop</launchable>
   <description>
@@ -28,11 +28,11 @@
     </p>
     <p>
       This version of OpenArena is based on the Quake3e engine by "Ec" on GitHub,
-      we do not take credit for his work or any of the work done by the OpenArena team.
+      we do not take credit for their work or any of the work done by the OpenArena team.
       This Flatpak was made to be a replacement of the original one released in 2012,
       as it contains bugs and annoyances not present in this engine.
       The gameplay is 100% compatible and if not, please make
-      an issue in our repo, we'll investigate it
+      an issue in our repo, we'll investigate it.
     </p>
     <p>
       A configuration file is also available, which lets you modify CVARS however you want.
@@ -52,7 +52,6 @@
   </screenshots>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-fantasy">moderate</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
     <content_attribute id="violence-bloodshed">mild</content_attribute>
     <content_attribute id="language-profanity">mild</content_attribute>
     <content_attribute id="social-chat">intense</content_attribute>
