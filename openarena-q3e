@@ -2,7 +2,7 @@
 
 # Set the necessary variables
 OA_DIR="${XDG_DATA_HOME}"
-OA_CVARS="+set fs_basegame baseoa +set fs_game oax +set protocol 71 +set fs_homepath ${OA_DIR}"
+OA_CVARS="+set fs_basegame baseoa +set fs_game oax +set protocol 71 +set fs_homepath ${OA_DIR} +set con_title OpenArena"
 DISABLED_CVARS="+set com_protocol 72 +set cl_voip 1"
 CONFIG_FILE="${XDG_CONFIG_HOME}/cfg"
 CFG_COMMENT="#----# You can change engine options by modifying these variables, or adding the variable 'CVARS', also, you can change the game engine using the variable Q3ENGINE."
