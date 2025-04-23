@@ -39,6 +39,10 @@
       Beware that trying to connect to an OAX-patched server may not work with unpatched clients. Connections to unpatched servers
       do work and present no issues.
     </p>
+    <p>
+      People looking for a lighter &#38; portable version without any dependencies may be interested in
+      https://github.com/pkgforge-dev/openArena, it contains further patches to enhance the experience on modern systems.
+    </p>
   </description>
   <url type="homepage">http://www.openarena.ws/</url>
   <screenshots>
